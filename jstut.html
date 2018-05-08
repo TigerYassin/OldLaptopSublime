@@ -1,0 +1,75 @@
+<html ng-app="">
+
+<title> jstut</title>
+
+
+<body>
+	
+	<p id="sayHello">
+		
+	</p>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<div ng-controller="MyController">
+
+	<input type="text" ng-model="name">
+	<p>this is the name of the person {{name|uppercase}}</p>
+
+
+</div>
+<script>
+	
+	var customer = {
+		name: "Yassin",
+		speak: function() {
+			return "My name is " + this.name;
+		},
+
+		address : {
+			street : '123 Main street',
+			city : "Pittsburgh",
+			state : "PA"
+		}
+	};
+
+document.write(customer.speak() + "<br />");
+document.write(customer.name + " lives at " + customer.address.street);
+
+customer.address.country = " US";
+document.write(customer.address.country + "</br>");
+
+
+function Person(name, street){
+	this.name = name;
+	this.street = street; 
+
+
+	this.info = function() {
+		return "My name is " + this.name + " and I live on " + this.street; 
+	}
+}
+
+
+var bobSmith = new Person("Bob Smith", "234 main St");
+
+document.write(bobSmith.info() + "</br>");
+document.write("Bob smith is a person " + (bobSmith instanceof Person) + " </br>")
+
+
+function changeName(person) {
+	person.name = "Sue Smith";
+}
+
+changeName(bobSmith);
+document.write("Bob became " + bobSmith.name + "<br />");
+
+
+var person1 = new Person("Paul", "123 Main");
+var person2 = new Person("Paul", "123 Main");
+
+
+</script>
+
+</body>
+
+</html>

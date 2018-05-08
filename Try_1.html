@@ -1,0 +1,50 @@
+<!DOCTYPE> 
+
+<html> 
+
+<head> this si the head
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<img src="IMG_2118.JPG" style="width: 70%; height: 100%">
+
+<body>
+
+<p> &copy; 2016 by Yassin </p>
+
+My body 
+
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+    $(".hoverli").hover(
+        function() {
+            $('ul.file_menu').slideDown('medium');
+        },
+        function() {
+            $('ul.file_menu').slideUp('medium');
+        }
+    );
+
+    $(".file_menu li").hover(
+        function() {
+            $(this).children("ul").slideDown('medium');
+        },
+        function() {
+            $(this).children("ul").slideUp('medium');
+        }
+    );
+});
+</script>
+
+
+
+</body>
+
+
+
+</html>
